@@ -15,8 +15,9 @@ import static org.springframework.context.annotation.ComponentScan.*;
                 Configuration.class))
 
 public class AutoAppConfig {
-    @Bean(name = "memoryMemberRepository")
+
+    /*@Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository() {
         return new MemoryMemberRepository();
-    }
+    }*/
 }
