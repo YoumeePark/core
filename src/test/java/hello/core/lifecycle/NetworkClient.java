@@ -9,8 +9,6 @@ public class NetworkClient implements InitializingBean, DisposableBean {
 
     public NetworkClient() {
         System.out.println("생성자 호출, url = " + url);
-        connect();
-        call("초기화 연결 메시지");
     }
 
     public void setUrl(String url) {
@@ -33,12 +31,14 @@ public class NetworkClient implements InitializingBean, DisposableBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        System.out.println("NetworkClient.afterPropertiesSet");
         connect();
         call("초기화 연결 메시지");
     }
 
     @Override
     public void destroy() throws Exception {
+        System.out.println("NetworkClietn.destroy");
         disconnect();
     }
 }
